@@ -1,0 +1,28 @@
+:root {
+  /* Colors */
+  --color-bg: 249 250 251;
+  --color-fg: 17 24 39;
+  --color-muted: 107 114 128;
+  --color-border: 229 231 235;
+
+  /* Typography */
+  --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+
+  /* Type scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 24px;
+  --text-3xl: 30px;
+
+  /* Spacing (4pt grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+}

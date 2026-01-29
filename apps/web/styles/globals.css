@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Move your element selectors inside this layer */
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    color: rgb(var(--color-fg)); /* Now text-white can override this! */
+  }
+
+  p {
+    margin: 0 0 var(--space-md);
+    max-width: var(--max-content);
+    color: rgb(var(--color-fg));
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: rgb(var(--color-bg));
+    color: rgb(var(--color-fg));
+    line-height: 1.75;
+  }
+}
+
+:root {
+  /* Off-white paper background */
+  --color-bg: 249, 248, 246;        /* archival paper */
+  --color-bg-muted: 242, 241, 238;  /* section contrast */
+
+  /* Text */
+  --color-fg: 24, 28, 33;           /* near-black */
+  --color-fg-muted: 95, 102, 110;   /* secondary text */
+
+  /* Borders */
+  --color-border: 220, 223, 227;
+
+  /* Accent (institutional blue-gray) */
+  --color-accent: 34, 72, 104;
+  --color-accent-muted: 80, 120, 150;
+
+  /* Fonts */
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 5rem;
+
+  /* Max widths */
+  --max-content: 72ch;
+  --max-wide: 1280px;
+}
+
+
+/* ---------------------------
+   BASE RESET
+---------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-fg));
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ---------------------------
+   TYPOGRAPHY
+---------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: rgb(var(--color-fg));
+}
+
+h1 {
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  line-height: 1.25;
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.35rem;
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin: 0 0 var(--space-md);
+  max-width: var(--max-content);
+  color: rgb(var(--color-fg));
+}
+
+p.muted {
+  color: rgb(var(--color-fg-muted));
+}
+
+/* Small institutional labels */
+.small,
+.caption {
+  font-size: 0.8rem;
+  color: rgb(var(--color-fg-muted));
+  letter-spacing: 0.02em;
+}
+
+
+/* ---------------------------
+   LINKS
+---------------------------- */
+a {
+  color: rgb(var(--color-accent));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: rgb(var(--color-accent-muted));
+}
+
+
+/* ---------------------------
+   STRUCTURAL ELEMENTS
+---------------------------- */
+main {
+  display: block;
+}
+
+section {
+  display: block;
+}
+
+.section-muted {
+  background: rgb(var(--color-bg-muted));
+}
+
+.container {
+  max-width: var(--max-wide);
+  margin-inline: auto;
+  padding: var(--space-xxl) var(--space-lg);
+}
+
+.container-narrow {
+  max-width: 880px;
+  margin-inline: auto;
+  padding: var(--space-xxl) var(--space-lg);
+}
+
+
+/* ---------------------------
+   IMAGE FRAMES (EDITORIAL)
+---------------------------- */
+.image-frame {
+  background: #ecebea;
+  border: 1px solid rgb(var(--color-border));
+  overflow: hidden;
+}
+
+.image-caption {
+  font-size: 0.75rem;
+  margin-top: 0.4rem;
+  color: rgb(var(--color-fg-muted));
+}
+
+
+/* ---------------------------
+   LISTS (RARE, CALM)
+---------------------------- */
+ul {
+  padding-left: 1.1rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+
+/* ---------------------------
+   TOP NAVIGATION
+---------------------------- */
+.site-header {
+  border-bottom: 1px solid rgb(var(--color-border));
+  background: rgb(var(--color-bg));
+}
+
+.site-header-inner {
+  max-width: var(--max-wide);
+  margin-inline: auto;
+  padding: 1.2rem var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: rgb(var(--color-fg));
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------------------
+   FOOTER (UN-STYLE, BIG)
+---------------------------- */
+.site-footer {
+  background: rgb(35, 39, 46);
+  color: rgb(220, 225, 230);
+  margin-top: var(--space-xxl);
+}
+
+.site-footer a {
+  color: rgb(200, 210, 220);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-inner {
+  max-width: var(--max-wide);
+  margin-inline: auto;
+  padding: var(--space-xxl) var(--space-lg);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem;
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  font-size: 0.75rem;
+  color: rgb(170, 180, 190);
+}
+
+
+/* ---------------------------
+   FORMS (MINIMAL)
+---------------------------- */
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border: 1px solid rgb(var(--color-border));
+  background: #fff;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgb(var(--color-accent));
+}
+
+
+/* ---------------------------
+   UTILITIES
+---------------------------- */
+.border-bottom {
+  border-bottom: 1px solid rgb(var(--color-border));
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}

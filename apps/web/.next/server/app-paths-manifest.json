@@ -1,0 +1,8 @@
+{
+  "/not-found": "app/not-found.js",
+  "/page": "app/page.js",
+  "/(public)/explore/page": "app/(public)/explore/page.js",
+  "/(public)/archive/page": "app/(public)/archive/page.js",
+  "/(public)/institutions/page": "app/(public)/institutions/page.js",
+  "/(public)/governance/page": "app/(public)/governance/page.js"
+}

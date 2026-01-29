@@ -1,0 +1,20 @@
+:root {
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --duration-fast: 120ms;
+  --duration-medium: 200ms;
+}
+
+.motion-fade {
+  transition: opacity var(--duration-medium) var(--ease-standard),
+              transform var(--duration-medium) var(--ease-standard);
+}
+
+.motion-enter {
+  opacity: 0;
+  transform: translateY(2px);
+}
+
+.motion-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
